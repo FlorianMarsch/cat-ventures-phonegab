@@ -5,66 +5,85 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+
+<script src="./js/angular.min.js"></script>
+<script src="./data/days.json"></script>
+
 <link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="css/pictures.css">
 </head>
-<body>
+<body ng-app="myApp" ng-controller="customersCtrl">
+
+		<div class="month" ng-hide="preview">
+			<span class="center">Come back in<br>December<br>2016
+			</span>
+		</div>
+		<div class="month day{{clicked.day}}" ng-show="preview"
+			ng-class="full ? 'full' : 'preview'" ng-click="full =! full">
 
 
-	<div class="month">
-		<ul>
-			<li>Come back in<br>December<br>2016
-			</li>
-		</ul>
-	</div>
+			<div ng-class="full ? '' : 'hideLeft'" class="navigator"><</div>
 
-	<ul class="weekdays">
-		<li>M</li>
-		<li>D</li>
-		<li>M</li>
-		<li>D</li>
-		<li>F</li>
-		<li>S</li>
-		<li>S</li>
-	</ul>
+		</div>
 
-	<ul class="days">
+		<div class="weekdays">
+			<div>
+				<span class="center">M</span>
+			</div>
+			<div>
+				<span class="center">D</span>
+			</div>
+			<div>
+				<span class="center">M</span>
+			</div>
+			<div>
+				<span class="center">D</span>
+			</div>
+			<div>
+				<span class="center">F</span>
+			</div>
+			<div>
+				<span class="center">S</span>
+			</div>
+			<div>
+				<span class="center">S</span>
+			</div>
+		</div>
 
-		<li class="light">28</li>
-		<li class="light">29</li>
-		<li class="light">30</li>
-		<li><span class="cat">M</span></li>
-		<li>2</li>
-		<li>3</li>
-		<li>4</li>
-		<li>5</li>
-		<li>6</li>
-		<li>7</li>
-		<li>8</li>
-		<li>9</li>
-		<li>10</li>
-		<li>11</li>
-		<li>12</li>
-		<li>13</li>
-		<li>14</li>
-		<li>15</li>
-		<li>16</li>
-		<li>17</li>
-		<li>18</li>
-		<li>19</li>
-		<li>20</li>
-		<li>21</li>
-		<li>22</li>
-		<li>23</li>
-		<li>24</li>
-		<li>25</li>
-		<li>26</li>
-		<li>27</li>
-		<li>28</li>
-		<li>29</li>
-		<li>30</li>
-		<li>31</li>
-		<li class="light">1</li>
-	</ul>
+		<div class="days">
+			<div ng-repeat="date in dates |orderBy:['year','month','day']"
+				ng-class="date.month == 12 ? '' : 'light'" ng-click="click(date);">
+				<span class="center" ng-hide="clicked === date">{{date.day}}</span>
+				<span ng-show="clicked === date" class="cat center">M</span>
+			</div>
+		</div>
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('customersCtrl', function($scope, $http) {
+			$scope.full = false;
+			$scope.preview = false;
+			$scope.dates = days;
+			$scope.click = function(date) {
+				$scope.clicked = date;
+				if (date.month === 12) {
+					$scope.preview = true;
+					$scope.full = false;
+				} else {
+					$scope.preview = false;
+					$scope.full = false;
+				}
+			}
+			$scope.clicked = {
+
+				"month" : 11,
+				"day" : 28,
+				"year" : 2016,
+				"text" : "Come back in December 2016",
+				"picture" : null
+			};
+		});
+	</script>
 
 </body>
 </html>

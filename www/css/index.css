@@ -5,109 +5,100 @@
 
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	transition-delay: 1s;
+	transition: all .2s;
+	position:relative;
 }
 
-ul {
-	list-style-type: none;
+html {
+	height: 100%;
+	width: 100%;
 }
 
 body {
 	font-family: Verdana, sans-serif;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
 }
 
 .month {
-	padding: 70px 25px;
 	width: 100%;
 	background: #1abc9c;
-}
-
-.month ul {
-	margin: 0;
-	padding: 0;
-}
-
-.month ul li {
+	height: 40%;
 	color: white;
 	font-size: 2em;
 	text-transform: uppercase;
 	letter-spacing: 3px;
-	text-align: center;
 	text-shadow: 4px 3px 0 #1d9d74, 9px 8px 0 rgba(0, 0, 0, 0.15);
 }
 
-.month .prev {
-	float: left;
-	padding-top: 10px;
+.preview {
+	
 }
 
-.month .next {
-	float: right;
-	padding-top: 10px;
+.full {
+	height: 100%;
 }
 
 .weekdays {
-	margin: 0;
-	padding: 10px 0;
-	background-color: #ddd;
+	height: 10%;
+	background: #ddd;
 }
 
-.weekdays li {
-	display: inline-block;
-	width: 13.6%;
-	color: #666;
-	text-align: center;
+.weekdays>div {
+	float: left;
+	width: 14%;
+	font-size: 12px;
+	color: #777;
+	height: 100%;
 }
 
 .days {
-	padding: 10px 0;
+	height: 50%;
 	background: #eee;
-	margin: 0;
 }
 
-.days li {
-	list-style-type: none;
-	display: inline-block;
-	width: 13.6%;
-	text-align: center;
-	margin-bottom: 5px;
+.days>div {
+	float: left;
+	width: 14%;
 	font-size: 12px;
 	color: #777;
-	line-height: 3em;
+	height: 20%;
 }
 
-
-
-/* Add media queries for smaller screens */
-@media screen and (max-width:720px) {
-	.weekdays li, .days li {
-		width: 13.1%;
-	}
-}
-
-@media screen and (max-width: 420px) {
-	.weekdays li, .days li {
-		width: 12.5%;
-	}
-	.days li .active {
-		padding: 2px;
-	}
-}
-
-@media screen and (max-width: 290px) {
-	.weekdays li, .days li {
-		width: 12.2%;
-	}
-}
-
-.days li span.cat {
+.days>div>span.cat {
 	font-family: cat;
 	font-size: 3em;
 	color: purple;
-
 	display: inline-block;
-	width:1em;
+	width: 1em;
 }
 
-.days li.light {
+.days>div.light {
 	color: #c0c0c0;
+}
+
+.navigator {
+	padding: 1%;
+	float: left;
+	left: 2%;
+	top:2%;
+	position: absolute;
+	transition: all 1s;
+}
+
+.hideLeft {
+	left: -100px;
+	position: absolute;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }

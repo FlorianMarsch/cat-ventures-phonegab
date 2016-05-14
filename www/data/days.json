@@ -1,0 +1,247 @@
+var days = [
+{ 
+   "month":11,
+   "day":28,
+   "year":2016,
+   "text":"Come back in December 2016",
+   "picture":null
+ },
+{ 
+   "month":11,
+   "day":29,
+   "year":2016,
+   "text":"Come back in December 2016",
+   "picture":null
+ },
+{ 
+   "month":11,
+   "day":30,
+   "year":2016,
+   "text":"Come back in December 2016",
+   "picture":null
+ },
+{ 
+   "month":12,
+   "day":1,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/1.jpg"
+ },
+{ 
+   "month":12,
+   "day":2,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/2.jpg"
+ },
+{ 
+   "month":12,
+   "day":3,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/3.jpg"
+ },
+{ 
+   "month":12,
+   "day":4,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/4.jpg"
+ },
+{ 
+   "month":12,
+   "day":5,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/5.jpg"
+ },
+{ 
+   "month":12,
+   "day":6,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/6.jpg"
+ },
+{ 
+   "month":12,
+   "day":7,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/7.jpg"
+ },
+{ 
+   "month":12,
+   "day":8,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/8.jpg"
+ },
+{ 
+   "month":12,
+   "day":9,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/9.jpg"
+ },
+{ 
+   "month":12,
+   "day":10,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/10.jpg"
+ },
+{ 
+   "month":12,
+   "day":11,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/11.jpg"
+ },
+{ 
+   "month":12,
+   "day":12,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/12.jpg"
+ },
+{ 
+   "month":12,
+   "day":13,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/13.jpg"
+ },
+{ 
+   "month":12,
+   "day":14,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/14.jpg"
+ },
+{ 
+   "month":12,
+   "day":15,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/15.jpg"
+ },
+{ 
+   "month":12,
+   "day":16,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/16.jpg"
+ },
+{ 
+   "month":12,
+   "day":17,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/17.jpg"
+ },
+{ 
+   "month":12,
+   "day":18,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/18.jpg"
+ },
+{ 
+   "month":12,
+   "day":19,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/19.jpg"
+ },
+{ 
+   "month":12,
+   "day":20,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/20.jpg"
+ },
+{ 
+   "month":12,
+   "day":21,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/21.jpg"
+ },
+{ 
+   "month":12,
+   "day":22,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/22.jpg"
+ },
+{ 
+   "month":12,
+   "day":23,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/23.jpg"
+ },
+{ 
+   "month":12,
+   "day":24,
+   "year":2016,
+   "text":null,
+   "picture":"./pictures/24.jpg"
+ },
+{ 
+   "month":12,
+   "day":25,
+   "year":2016,
+   "text":"Come back in December 2017",
+   "picture":null
+ },
+{ 
+   "month":12,
+   "day":26,
+   "year":2016,
+   "text":"Come back in December 2017",
+   "picture":null
+ },
+{ 
+   "month":12,
+   "day":27,
+   "year":2016,
+   "text":"Come back in December 2017",
+   "picture":null
+ },
+{ 
+   "month":12,
+   "day":28,
+   "year":2016,
+   "text":"Come back in December 2017",
+   "picture":null
+ },
+{ 
+   "month":12,
+   "day":29,
+   "year":2016,
+   "text":"Come back in December 2017",
+   "picture":null
+ },
+{ 
+   "month":12,
+   "day":30,
+   "year":2016,
+   "text":"Come back in December 2017",
+   "picture":null
+ },
+{ 
+   "month":12,
+   "day":31,
+   "year":2016,
+   "text":"Come back in December 2017",
+   "picture":null
+ },
+ {
+   "month":1,
+   "day":1,
+   "year":2017,
+   "text":"Come back in December 2017",
+   "picture":null
+ }
+]
