@@ -15,49 +15,48 @@
 </head>
 <body ng-app="myApp" ng-controller="customersCtrl">
 
-		<div class="month" ng-hide="preview">
-			<span class="center">Come back in<br>December<br>2016
-			</span>
+	<div class="month" ng-hide="preview">
+		<span class="center">{{clicked.text}} </span>
+	</div>
+	<div class="month day{{clicked.day}}" ng-show="preview"
+		ng-class="full ? 'full' : 'preview'" ng-click="full =! full">
+
+
+		<div ng-class="full ? '' : 'hideLeft'" class="navigator"><</div>
+
+	</div>
+
+	<div class="weekdays">
+		<div>
+			<span class="center">M</span>
 		</div>
-		<div class="month day{{clicked.day}}" ng-show="preview"
-			ng-class="full ? 'full' : 'preview'" ng-click="full =! full">
-
-
-			<div ng-class="full ? '' : 'hideLeft'" class="navigator"><</div>
-
+		<div>
+			<span class="center">D</span>
 		</div>
-
-		<div class="weekdays">
-			<div>
-				<span class="center">M</span>
-			</div>
-			<div>
-				<span class="center">D</span>
-			</div>
-			<div>
-				<span class="center">M</span>
-			</div>
-			<div>
-				<span class="center">D</span>
-			</div>
-			<div>
-				<span class="center">F</span>
-			</div>
-			<div>
-				<span class="center">S</span>
-			</div>
-			<div>
-				<span class="center">S</span>
-			</div>
+		<div>
+			<span class="center">M</span>
 		</div>
-
-		<div class="days">
-			<div ng-repeat="date in dates |orderBy:['year','month','day']"
-				ng-class="date.month == 12 ? '' : 'light'" ng-click="click(date);">
-				<span class="center" ng-hide="clicked === date">{{date.day}}</span>
-				<span ng-show="clicked === date" class="cat center">M</span>
-			</div>
+		<div>
+			<span class="center">D</span>
 		</div>
+		<div>
+			<span class="center">F</span>
+		</div>
+		<div>
+			<span class="center">S</span>
+		</div>
+		<div>
+			<span class="center">S</span>
+		</div>
+	</div>
+
+	<div class="days">
+		<div ng-repeat="date in dates |orderBy:['year','month','day']"
+			ng-class="date.month == 12 ? '' : 'light'" ng-click="click(date);">
+			<span class="center" ng-hide="clicked === date">{{date.day}}</span> <span
+				ng-show="clicked === date" class="cat center">M</span>
+		</div>
+	</div>
 	<script>
 		var app = angular.module('myApp', []);
 		app.controller('customersCtrl', function($scope, $http) {
@@ -65,23 +64,39 @@
 			$scope.preview = false;
 			$scope.dates = days;
 			$scope.click = function(date) {
+				if (date.disabled) {
+					$scope.preview = false;
+					$scope.full = false;
+					$scope.clicked = date;
+					$scope.clicked.text="Its too early to click here";
+					$scope.clicked.picture=null;
+					return;
+				}
 				$scope.clicked = date;
-				if (date.month === 12) {
+				if (date.month === 12 && date.picture) {
 					$scope.preview = true;
 					$scope.full = false;
 				} else {
 					$scope.preview = false;
 					$scope.full = false;
 				}
-			}
-			$scope.clicked = {
 
-				"month" : 11,
-				"day" : 28,
-				"year" : 2016,
-				"text" : "Come back in December 2016",
-				"picture" : null
+			}
+			var found = false;
+			days.forEach(function(element, index, array) {
+
+				if (element.active) {
+					$scope.click(element);
+					found = true;
+				}
+
+			});
+			if(! found){
+				var element = {};
+				element.disabled = true;
+				$scope.click(element);
 			};
+
 		});
 	</script>
 

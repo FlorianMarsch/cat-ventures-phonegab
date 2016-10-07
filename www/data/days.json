@@ -244,4 +244,33 @@ var days = [
    "text":"Come back in December 2017",
    "picture":null
  }
-]
+];
+var currentDate = new Date();
+var currentDay = currentDate.getDate();
+var currentMonth = currentDate.getMonth()+3; //+1
+var currentYear = currentDate.getYear()+1900; 
+
+console.log(currentDay);
+console.log(currentMonth);
+console.log(currentYear);
+days.forEach(function(element, index, array){
+
+	var active = element.day === currentDay && element.month === currentMonth;
+	element.active = active;
+	
+	if(element.year > currentYear){
+		element.disabled = true;
+	}else if(element.month < currentMonth){
+		element.disabled = false;
+	}else if(element.month > currentMonth){
+		element.disabled = true;
+	}else{
+		if(element.day > currentDay){
+			element.disabled = true;
+		}else{
+			element.disabled = false;
+		}
+	
+	}
+
+})
